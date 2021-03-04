@@ -1,6 +1,14 @@
 package java_1.dataTypes;
 
+import java.util.Random;
+
 class Arrays {
+    public static void main(String[] args){
+        var myArrays = new Arrays();
+        myArrays.printNums();
+        myArrays.greet("Chad");
+    }
+
     int[] nums = new int[]{10,23,3,4,5,2,1};
     String[] greetings = new String[]{"Hello","Howdy","Hallo","Hola","Bonjour","Ciao","أهلا و سهلا"};
     int[] bits = new int[]{0,1,1,1,0,0,0,1,1,1,1,1,0,1,0,0,1,0};
@@ -8,6 +16,9 @@ class Arrays {
 
     void printNums() {
 //        Programmatically print the nums array to the console.  Print each number on a new line.  The nums array is defined on this class.
+        for (int element: nums) {
+            System.out.println(element);
+        }
     };
 
     void greet(String name) {
@@ -17,6 +28,9 @@ class Arrays {
                "ABRAM" => greet() => "Hola Abram"
                "maTT => greet() => "أهلا و سهلا Matt"
  */
+        Random random = new Random();
+        int index = random.nextInt(greetings.length);
+        System.out.println(greetings[index]+" "+name);
     };
 
     boolean[] bitsToBinaries() {
