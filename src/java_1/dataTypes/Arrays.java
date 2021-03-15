@@ -7,6 +7,8 @@ class Arrays {
         var myArrays = new Arrays();
         myArrays.printNums();
         myArrays.greet("Chad");
+        myArrays.bitsToBinaries();
+        myArrays.keepColors();
     }
 
     int[] nums = new int[]{10,23,3,4,5,2,1};
@@ -36,12 +38,26 @@ class Arrays {
     boolean[] bitsToBinaries() {
 //        Programmatically convert the bit array of 1's and 0's into a binary array of true and false. return the 'converted' array.
 //        ex : bitsToBinaries() => [false,true,true,true,false,false,false,true,true,true,true,true,false,true,false,false,true,false]
+        for (int element: bits) {
+            if (element == 1) {
+                System.out.println("true");
+            }
+            else if (element == 0){
+                System.out.println("false");
+            }
+        }
             return null;
     };
 
     String[] keepColors() {
 //        In this class is an array called "colors".  Programmatically remove the elements that do NOT have a color associated with it.  Return the filtered color array of elements that have a color associated with it.
 //        ex : keepColors() => ["bluebird","yellow bumblebee","black spider", "green monkey","pink","black bird","Great White Lakes","white bible","green quran", "red herring", "Black Sea"]
+
+        String[] newColors = java.util.Arrays.stream(colors).filter((s -> s.toLowerCase().contains("blue") || s.toLowerCase().contains("green") || s.toLowerCase().contains("pink") || s.toLowerCase().contains("red") || s.toLowerCase().contains("yellow") || s.toLowerCase().contains("black") || s.toLowerCase().contains("white"))).toArray(String[]::new);
+        for (String i: newColors){
+            System.out.println(i);
+        }
+
         return null;
     }
 
