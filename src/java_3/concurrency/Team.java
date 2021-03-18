@@ -17,8 +17,13 @@ class Team implements Runnable {
         var teamMembers = List.of("Chad", "Taylor", "Edward", "Jaleel", "James", "Marina", "Anthony");
 
         for (int i = 0; i < teamMembers.size(); i++) {
+            team.add(teamMembers.get(i));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println(teamMembers.get(i));
-            System.out.println();
         }
     }
 
