@@ -1,5 +1,7 @@
 package java_3.serial;
 
+import java.io.IOException;
+
 public class Fax {
 
 /*	Properties :
@@ -12,13 +14,34 @@ public class Fax {
 		receive(message)
 
  */
-	private void transmit(Message msg) {
+
+	String brand;
+	String model;
+	String year;
+
+	public Fax(String brand, String model, String year) {
+		this.brand = brand;
+		this.model = model;
+		this.year = year;
+	}
+
+	public static void transmit(Message msg, String msgFileName) throws IOException {
 		//The transmit message must serialize a Message, and write it to a file.
+		Serialization.serialization(msg, msgFileName);
 	}
 
-	private Message receive(String filename) {
+	public static void receive(Message msg, String msgFileName) throws IOException, ClassNotFoundException {
 //		The receive method should deserialize a message by reading it in from a file. and then print it to the console.
-		return new Message();
+		Message reMsg = (Message) Serialization.deserialization(msgFileName);
+		System.out.println(reMsg);
 	}
 
+	@Override
+	public String toString() {
+		return "Fax{" +
+				"brand='" + brand + '\'' +
+				", model='" + model + '\'' +
+				", year='" + year + '\'' +
+				'}';
+	}
 }

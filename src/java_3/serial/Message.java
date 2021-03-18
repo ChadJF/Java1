@@ -1,7 +1,9 @@
 package java_3.serial;
 
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
 	private int id;
 	private String msgTxt;
 
@@ -9,9 +11,6 @@ public class Message {
 		this.id = id;
 		this.msgTxt = msgTxt;
 	}
-
-	public Message() {}
-
 
 	public String getMsgTxt() {
 		return msgTxt;
@@ -33,5 +32,11 @@ public class Message {
 		this.id = id;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Message{" +
+				"id=" + id +
+				", msgTxt='" + msgTxt + '\'' +
+				'}';
+	}
 }
