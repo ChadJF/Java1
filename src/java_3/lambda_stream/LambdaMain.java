@@ -20,6 +20,20 @@ public class LambdaMain {
 			Numbers.lambdaCompute(() -> ... ) => 2500
 			etc...
 			*/
+		Numbers numbers = new Numbers();
+		numbers.getNums();
+		numbers.getNum(0);
+		numbers.isOdd(0);
+		numbers.isEven(0);
+		numbers.isPrime(0);
+		numbers.added();
+		numbers.subtracted();
+		numbers.multipled();
+		numbers.divided();
+		numbers.findMax();
+		numbers.findMin();
+		//
+
 	}
 
 }

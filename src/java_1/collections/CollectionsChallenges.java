@@ -10,7 +10,7 @@ public class CollectionsChallenges {
 //		Complete the code challenges for the following static methods
 
 		var myArrays = new CollectionsChallenges();
-		myArrays.findVal(3);
+		findVal(3);
 		myArrays.convertArrToList();
 		myArrays.listToSet();
 		myArrays.addToList(9);
