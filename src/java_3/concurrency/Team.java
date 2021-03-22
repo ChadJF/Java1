@@ -3,10 +3,29 @@ package java_3.concurrency;
 import java.util.ArrayList;
 import java.util.List;
 
-class Team {
+class Team implements Runnable {
 
     private String teamName;
     private List<String> team = new ArrayList<>();
+
+    public Team(String teamName) {
+        this.teamName = teamName;
+    }
+
+    @Override
+    public void run() {
+        var teamMembers = List.of("Chad", "Taylor", "Edward", "Jaleel", "James", "Marina", "Anthony");
+
+        for (int i = 0; i < teamMembers.size(); i++) {
+            team.add(teamMembers.get(i));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(teamMembers.get(i));
+        }
+    }
 
     /*
         -This thread should be created by implementing the Runnable interface, NOT by extending the Thread class.
@@ -17,7 +36,5 @@ class Team {
         Kick off the thread in the LambdaMain class of the concurrency package.
         Set the name of the thead to be your agile team name.
      */
-
-
 
 }

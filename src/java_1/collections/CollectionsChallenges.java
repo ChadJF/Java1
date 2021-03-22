@@ -1,5 +1,7 @@
 package java_1.collections;
 
+import java_1.dataTypes.JavaChallenges;
+
 import java.util.*;
 
 public class CollectionsChallenges {
@@ -7,44 +9,110 @@ public class CollectionsChallenges {
 	public static void main(String[] args) {
 //		Complete the code challenges for the following static methods
 
+		var myArrays = new CollectionsChallenges();
+		findVal(3);
+		myArrays.convertArrToList();
+		myArrays.listToSet();
+		myArrays.addToList(9);
+		myArrays.removeFromList(3);
+		myArrays.insertIntoList(2, 3);
+		myArrays.reverseNums();
+		// mutate linked list
+		myArrays.removeDuplicates();
 	}
 
 
-	static int findVal(int val, ArrayList<Integer> arrList) {
+	static int findVal(int val) {
 //		find a value in the input array list.  return it if found.  If not, return 0.
-		return 0;
+		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		arrList.add(5);
+		arrList.add(8);
+		arrList.add(2);
+		arrList.add(6);
+		arrList.add(3);
+
+		if (arrList.contains(val)){
+			return val;
+		}
+		else {
+			return 0;
+		}
 	}
 
-	static List convertArrToList(Object[] array) {
+	static List convertArrToList() {
 //		convert the array to a list and return it.
-		return null;
+		Object[] array = {1, 2, 3, 4, 5};
+
+		var list = Arrays.asList(array);
+
+		return list;
 	}
 
-	static Set<String> listToSet(List<String> states) {
+	static Set<String> listToSet() {
 //		convert a list of US states to a set.  return the set.
-		return null;
+		List<String> states = new ArrayList<String>();
+
+		states.add("Texas");
+		states.add("Washington");
+
+		Set<String> newSet = new HashSet<String>(states);
+
+		return newSet;
 	}
 
-	static int addToList(int x, ArrayList<Integer> numList) {
-		// add the x input to the array list.  return the value if succcessfully added.
+	static int addToList(int x) {
+		// add the x input to the array list.  return the value if successfully added.
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+
+		numList.add(x);
+
 		return x;
 	}
 
-	static void removeFromList(int x, ArrayList<Integer> numList) {
+	static void removeFromList(int x) {
 		// remove the input parameter value x from the numList.
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		numList.add(x);
+
+		numList.remove(0);
 	}
 
-	static int insertIntoList(int x, int i, ArrayList<Integer> numList) {
+	static int insertIntoList(int x, int i) {
 		// insert the the value x at index position i for the input numList.  If the index position is outside the bounds of the current numList, add it to the end of the array list.
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		numList.add(10);
+		numList.add(9);
+		numList.add(8);
+		numList.add(7);
+		numList.add(6);
+		numList.add(5);
+
+		numList.add(x,i);
+
 		return x;
 	}
 
-	static List<Integer> reverseNums(ArrayList<Integer> nums) {
+	static List<Integer> reverseNums() {
 		/*
 		reverse the values of the nums list
 		return the reversed array list.
 		*/
-		return null;
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		ArrayList<Integer> newNums = new ArrayList<Integer>();
+
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		nums.add(4);
+		nums.add(5);
+
+		for (int i = nums.size() - 1; i >= 0; i--) {
+			newNums.add(nums.get(i));
+		}
+
+		return newNums;
+
+//		return null;
 	}
 
 	static LinkedList<String> reverseLinkedList(LinkedList<String> linkedList, boolean mutate) {
@@ -55,9 +123,24 @@ public class CollectionsChallenges {
 		return linkedList;
 	}
 
-	static ArrayList<String> removeDuplicates(ArrayList<String> names) {
+	static ArrayList<String> removeDuplicates() {
 //		remove duplicates from the list of name strings.  return a new array list with the unique elements.
-		return names;
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Chad");
+		names.add("Hannah");
+		names.add("Chad");
+
+		ArrayList<String> newNames = new ArrayList<String>();
+
+		for (String element : names) {
+			if (!newNames.contains(element)) {
+				newNames.add(element);
+			}
+		}
+
+		return newNames;
+
+//		return names;
 	}
 
 	static class Person {

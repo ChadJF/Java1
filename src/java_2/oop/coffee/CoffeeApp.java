@@ -11,6 +11,8 @@ public class CoffeeApp {
 	-
  */
 
+		// The coffee app uses inheritance and polymorphism, I moved on from this assignment to focus on the others and get enough points to move on.
+
 		CoffeeBeans java = new CoffeeBeans();
 		Cup mug = new Cup();
 		CoffeeMaker keureg = new CoffeeMaker();

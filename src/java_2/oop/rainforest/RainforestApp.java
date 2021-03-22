@@ -1,5 +1,7 @@
 package java_2.oop.rainforest;
 
+import java.sql.SQLOutput;
+
 public class RainforestApp {
 
 	public static void main(String[] args) {
@@ -17,6 +19,19 @@ public class RainforestApp {
 		choose your own characteristics and methods to model).
 
 */
+		// Polymorphism, abstraction, extension
+
+		// RainforestCreature creature;
+
+		RainforestCreature armadillo = new RainforestCreature("Armadillo", "mammal", new String[]{"insects", "fruits"});
+		RainforestCreature otter = new RainforestCreature("Otter", "mammal", new String[]{"fish", "birds"});
+		RainforestCreature jaguar = new RainforestCreature("Jaguar", "mammal", new String[]{"rodent", "fish", "birds", "mammals"});
+		RainforestCreature ocelot = new RainforestCreature("Ocelot", "mammal", new String[]{"birds", "snakes", "monkeys"});
+		RainforestCreature toucan = new RainforestCreature("Toucan", "mammal", new String[]{"insects", "fruits", "eggs", "small birds"});
+		RainforestCreature dartFrog = new RainforestCreature("Dart Frog", "amphibian", new String[]{"insects", "more insects", "even more insects"});
+
+		System.out.println("Name: "+armadillo.name+" Type: "+armadillo.type+" Food: "+String.join(", ", armadillo.food));
+		armadillo.eat();
 	}
 
 }
