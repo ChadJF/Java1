@@ -3,6 +3,8 @@ package java_4.regex;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class Regex {
 
@@ -13,7 +15,7 @@ class Regex {
 
     static void explainPattern() {
         // What does the following pattern match? (\d){36} explain in a println() statement.
-        System.out.println("The following pattern ('\\d'){35} matches : ...");
+        System.out.println("The following pattern ('\\d'){35} matches : A sequence of 35 digits.");
     }
 
     static int countWords(String str) {
@@ -28,12 +30,27 @@ class Regex {
     static int countBooks() {
         // Find all the occurences of any form of 'book' in the bookText class variable. use java_4.regex to match the occurences and store the count of books to an int.
         int bookCount = 0;
+        // bookCount.
+        System.out.println(bookText);
+        Pattern regexBooks = Pattern.compile("[bB]ook");
+        Matcher matchBooks = regexBooks.matcher(bookText);
+        while (matchBooks.find()) {
+            bookCount++;
+        }
+        System.out.println("Matched this many books: "+bookCount);
         return bookCount;
     }
 
     static String[] tmFirstNameBasis() {
         // Create a new array of the first names of the TEKmentors array defined as a class property.  Use Regex to only grab the first name of every TEKmentor in the TEKmentors set defined in this class.  Return an Array of first names.
         String[] firstNamesTMs = {};
+        System.out.println(TEKmentors);
+        Pattern nameBasis = Pattern.compile("(?:^|(?:[.!?]\\s))(\\w+)");
+        Matcher firstNames = nameBasis.matcher((CharSequence) TEKmentors);
+        // while (nameBasis.){
+            System.out.println(firstNames);
+        // }
+        //
         return firstNamesTMs;
     }
 
@@ -52,6 +69,13 @@ class Regex {
     static int findPhoneNumbers(String str) {
     // determine if the input string is a valid phone number.  If not, return 0.
     //   examples : (123)-234-3456, 123456789, 123 342 2222, (123)345-3333
+        // String[] firstNamesTMs = {};
+        // create an array
+        // System.out.println(TEKmentors);
+        // allow for scanner to input 10 digits, run through if statement to determine 10 digits sorted with regex
+        // reformat pattern matcher
+        Pattern nameBasis = Pattern.compile("(?:^|(?:[.!?]\\s))(\\w+)");
+        Matcher firstNames = nameBasis.matcher((CharSequence) TEKmentors);
         return 0;
     }
 
@@ -65,7 +89,9 @@ class Regex {
     }
 
     public static void main(String[] args) {
+        countBooks();
         printArrows();
+        tmFirstNameBasis();
     }
 }
 
